@@ -1,0 +1,54 @@
+{% extends "master.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block message %}
+    <hr />
+    <h4 class="text-center">Customer {{query}}</h4>
+    <!-- <p class="text-center"><i></i></p> -->
+{% endblock %}
+
+{% block content %}
+
+{% if error == 1 %}
+    <!-- <h1 class="text-center">Result</h1> -->
+    <div class="container" align="center">
+        <div style="width: 40%">
+          <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
+              <h1 class="display-5">Please provide a customer number. You entered: {{query}}.</h1>
+              <!-- <p class="lead">{{days_list_user}}</p> -->
+          </div>
+        </div>
+    </div>
+
+{% else %}
+<div class="page-header">
+    <h2 class="text-center">relative to other customers:</h2>
+</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
+                    <h1 class="display-4">{{ number_lines }}</h1>
+                    <p class="lead">The number of messages used to train.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
+                    <p class="lead">Days listened</p>
+                    <h1 class="display-4">{{days_list_user_share}}%</h1>
+                    <p class="lead">user {{query}}: {{days_list_user}}, median: {{days_list_median}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
+                    <p class="lead">Songs per day</p>
+                    <h1 class="display-4">{{songs_per_day_user_share}}%</h1>
+                    <p class="lead">user {{query}}: {{songs_per_day_user}}, median: {{songs_per_day_median}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}
