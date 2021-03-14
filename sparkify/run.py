@@ -56,8 +56,9 @@ def go():
         )
     else:
         days_list_user = df[df.userId == int(query)].days_listened.iloc[0]
-        days_list_median=int(df.days_listened.median())
+        days_list_median = int(df.days_listened.median())
         songs_per_day_user = df[df.userId == int(query)].songs_per_day.iloc[0]
+        churn_proba = round(df[df.userId == int(query)].probability.iloc[0], 2)
 
         return render_template(
             'go.html',
@@ -67,8 +68,8 @@ def go():
             days_list_user_share=int((days_list_user/days_list_median)*100),
             songs_per_day_median=songs_per_day_median,
             songs_per_day_user=int(songs_per_day_user),
-            songs_per_day_user_share=int((songs_per_day_user/songs_per_day_median)*100)
-
+            songs_per_day_user_share=int((songs_per_day_user/songs_per_day_median)*100),
+            churn_proba=int(churn_proba*100)
         )
 
 def main():
