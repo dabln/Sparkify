@@ -21,6 +21,11 @@ To run the web app:
     `python run.py`
 - Go to http://0.0.0.0:3001/ in a browser.
 
+To run the PySpark notebook (see 'files' below):
+- Bring the pyspark Jupyter notebook to infrastructure able to execute PySpark code.
+- An AWS S3 link to the dataset used can be found in the notebook, section `Gather data`.
+- The `sparkify.db` saved when running the code is expected by the web app in the folder `data`.
+
 ## Files:
 Folder `analysis` contains the Jupyter notebook for the PySpark Churn analysis.
 
@@ -29,7 +34,7 @@ Folder `analysis` contains the Jupyter notebook for the PySpark Churn analysis.
 `sparkify_app` contains the web application.
 
 ## Discussion of approach
-For the Churn analysis please refer to the Jupyter notebook in `analysis`. To reduce runtime only two algorithms and a subset of the data is considered.
+For the Churn analysis please refer to the Jupyter notebook in `analysis`. To reduce the runtime only two algorithms and a subset of the data is considered.
 
 The Sparkify app gives an overview when a customer service agent starts the application. When handling a customer issue he finds customer specific information, including the customers __likelihood to cancel the service__ (churn), by entering the customer number.
 
