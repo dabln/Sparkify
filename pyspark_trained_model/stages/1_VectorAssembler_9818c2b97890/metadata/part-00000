@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1616922297646,"sparkVersion":"2.4.3","uid":"VectorAssembler_9818c2b97890","paramMap":{"outputCol":"features_unscaled","inputCols":["days_listened","songs_per_day","account_age","d_female"]},"defaultParamMap":{"outputCol":"VectorAssembler_9818c2b97890__output","handleInvalid":"error"}}
