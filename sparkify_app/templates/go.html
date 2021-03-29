@@ -3,9 +3,9 @@
 {% block title %}Results{% endblock %}
 
 {% block message %}
-    <hr />
+    <!-- <hr />
     <h4 class="text-center">Customer {{query}}</h4>
-    <!-- <p class="text-center"><i></i></p> -->
+    <p class="text-center"><i></i></p> -->
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
 
 {% else %}
 <div class="page-header">
-    <h2 class="text-center">relative to other customers:</h2>
+    <h2 class="text-center">Customer {{query}}</h2>
 </div>
     <div class="container-fluid">
         <div class="row">
@@ -35,16 +35,16 @@
             </div>
             <div class="col-lg-4">
                 <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
-                    <p class="lead">Days listened</p>
+                    <p class="lead">relative <b>days</b> listened</p>
                     <h1 class="display-4">{{days_list_user_share}}%</h1>
-                    <p class="lead">user {{query}}: {{days_list_user}}, median: {{days_list_median}}</p>
+                    user {{query}}: {{days_list_user}} days
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
-                    <p class="lead">Songs per day</p>
+                    <p class="lead">relative <b>songs</b> per day</p>
                     <h1 class="display-4">{{songs_per_day_user_share}}%</h1>
-                    <p class="lead">user {{query}}: {{songs_per_day_user}}, median: {{songs_per_day_median}}</p>
+                    user {{query}}: {{songs_per_day_user}} per day
                 </div>
             </div>
         </div>

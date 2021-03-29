@@ -4,9 +4,17 @@ import pandas as pd
 
 from flask import Flask
 from flask import render_template, request, jsonify
-from plotly.graph_objs import Bar
+#from plotly.graph_objs import Bar
+#from plotly.graph_objs import Figure
 #from sklearn.externals import joblib # https://stackoverflow.com/questions/61893719/importerror-cannot-import-name-joblib-from-sklearn-externals
 import joblib
+
+
+import plotly.express as px
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+
 from sqlalchemy import create_engine
 
 from wrangle_graphs import return_graphs
@@ -20,15 +28,19 @@ df = pd.read_sql_table('user_table', engine)
 # individual days listened
 days_list_median = int(df.days_listened.median())
 songs_per_day_median = int(df.songs_per_day.median())
+number_customers = df.userId.nunique()
 
 # load model
 #model = joblib.load("../models/disaster_model.pkl")
+
 
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
 @app.route('/index')
 def index():
-    number_lines = df.shape[0]
+    fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])
+    test=html.Div([dcc.Graph(figure=fig)])
+
     graphs = return_graphs(df)
 
     # encode plotly graphs in JSON
@@ -36,10 +48,12 @@ def index():
     graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
 
     # render web page with plotly graphs
-    return render_template('master.html', ids=ids, graphJSON=graphJSON,
-        number_lines=number_lines,
+    return render_template('master.html',
+        ids=ids, graphJSON=graphJSON,
+        number_customers=number_customers,
         days_list_median=days_list_median,
-        songs_per_day_median=songs_per_day_median)
+        songs_per_day_median=songs_per_day_median
+        )
 
 # web page that handles user query and displays customer results
 @app.route('/go')
@@ -62,6 +76,7 @@ def go():
 
         return render_template(
             'go.html',
+            number_customers=number_customers,
             query=query,
             days_list_median=days_list_median,
             days_list_user=days_list_user,
@@ -74,7 +89,6 @@ def go():
 
 def main():
     app.run(host='0.0.0.0', port=3001, debug=True)
-
 
 if __name__ == '__main__':
     main()

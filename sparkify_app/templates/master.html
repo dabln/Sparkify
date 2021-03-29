@@ -24,7 +24,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="https://github.com/dabln/dsnd-DisasterResponsePipeline" target="_blank">Code on GitHub</a>
+                <a class="nav-link" href="https://github.com/dabln/Sparkify" target="_blank">Code on GitHub</a>
             </li>
         </ul>
     </div>
@@ -34,7 +34,7 @@
 <div class="jumbotron">
     <div class="container mt-5">
         <h1 class="text-center">Sparkify Callcenter Dashboard</h1>
-        <p class="text-center">Enter a customer number.<br> Enter e.g. 39, 92, 300011 (heavy users), or e.g. 125.</p>
+        <p class="text-center">Please enter a customer number.<br> Enter e.g. 39, 92, 300011 (heavy users), or e.g. 125.</p>
         <hr />
 
         <div class="row">
@@ -47,35 +47,22 @@
                 </form>
             </div>
         </div>
-        <p class="text-center font-italic mt-3">.</p>
-        {% block message %}
-        {% endblock %}
+        <!-- <p class="text-center font-italic mt-3">.</p> -->
     </div>
 </div>
 
 <div class="container">
-    {% block content %}
+  {% block content %}
+  {% endblock %}
         <div class="page-header">
-            <h1 class="text-center">Overview of Training Dataset</h1>
+            <h2 class="text-center">Overview of Customer base</h2>
         </div>
-
-
-
-    <!-- <div class="container" align="center">
-        <div style="width: 40%">
-          <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
-            	<h1 class="display-4">{{ number_lines }}</h1>
-            	<p class="lead">The number of messages used to train.</p>
-          </div>
-        </div>
-    </div> -->
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-4">
             <div class="jumbotron text-center jumbotron-fluid p-4 mt-4">
-                <h1 class="display-4">{{ number_lines }}</h1>
-                <p class="lead">The number of messages used to train.</p>
+                <p class="lead">Number of cumstomers</p>
+                <h1 class="display-4">{{ number_customers }}</h1>
             </div>
         </div>
         <div class="col-lg-4">
@@ -92,8 +79,6 @@
         </div>
     </div>
 </div>
-
-    {% endblock %}
 
     {% for id in ids %}
         <div id="{{id}}"></div>
