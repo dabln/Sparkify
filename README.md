@@ -17,7 +17,7 @@ _PySpark_: The input dataset is logfile data. The processing result is the aggre
 
 ## Instructions
 To run the web app:
-- Execute the Python file 'run.py' in the 'app' folder via the command line:
+- Execute the Python file 'run.py' in the 'sparkify_app' folder via the command line:
     `python run.py`
 - Go to http://0.0.0.0:3001/ in a browser.
 
