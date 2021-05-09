@@ -1,5 +1,8 @@
 # Customer Service Web Application using PySpark for Big Data Processing
-Part of the Udacity Data Science Nanodegree: __Spark Project: Sparkify__.
+
+<div align="center">
+  <video src="https://github.com/janhenner/SparkChurnAnalysis/blob/master/video/SparkChurnAnalysisDashboard.mov?raw=true" alt="Sparkify Churn Analysis Project"></video><br>
+</div>
 
 ## General info
 A __web app__ created with Flask and Bootstrap provides key customer metrics e.g. a churn probability. The target audience is customer service agents of the fictional music streaming company _Sparkify_. The app provides an __interface__ to filter for a specific customer.
