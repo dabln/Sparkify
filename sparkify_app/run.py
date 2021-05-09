@@ -4,9 +4,6 @@ import pandas as pd
 
 from flask import Flask
 from flask import render_template, request, jsonify
-#from plotly.graph_objs import Bar
-#from plotly.graph_objs import Figure
-#from sklearn.externals import joblib # https://stackoverflow.com/questions/61893719/importerror-cannot-import-name-joblib-from-sklearn-externals
 import joblib
 
 
@@ -30,17 +27,10 @@ days_list_median = int(df.days_listened.median())
 songs_per_day_median = int(df.songs_per_day.median())
 number_customers = df.userId.nunique()
 
-# load model
-#model = joblib.load("../models/disaster_model.pkl")
-
-
 # index webpage displays cool visuals and receives user input text for model
 @app.route('/')
 @app.route('/index')
 def index():
-    fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])
-    test=html.Div([dcc.Graph(figure=fig)])
-
     graphs = return_graphs(df)
 
     # encode plotly graphs in JSON
