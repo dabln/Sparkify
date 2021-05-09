@@ -1,5 +1,3 @@
-https://user-images.githubusercontent.com/49597236/117567471-cd525f80-b0bc-11eb-92be-29158d6b94c7.mov
-
 # Customer Service Web Application using PySpark for Big Data Processing
 
 ## General info
@@ -9,7 +7,10 @@ Apache __Spark__ as a _technology for distributed data processing_ is used to co
 
 To predict __Churn__ we apply Machine Learning algorithms to 12 GB of logfile data. While Big Data has no universal definition we consider the problem to fall into this domain as it cannot be solved without a __network of distributed computers__.
 
-__New training data__ can be provided and used to update the churn prediction model. A manual __ETL and Machine Learning (ML) pipeline__ is provided: A Jupyter notebook contains all the code for data cleaning, training the classifier and providing the best model to the web app. _Manual pipelines_ as the code is not transferred to a .py file for programmatic execution.
+__New training data__ can be provided and used to update the churn prediction model. A manual __ETL and Machine Learning (ML) pipeline__ is provided: A Jupyter notebook contains all the code for data cleaning, training the classifier and providing the best model to the web app. _Manual pipelines_ because the code is not transferred to a .py file for programmatic execution as in the [Disaster Response Pipeline project](https://github.com/janhenner/DisasterResponsePipeline).
+
+## Screen capture of the web app
+https://user-images.githubusercontent.com/49597236/117567471-cd525f80-b0bc-11eb-92be-29158d6b94c7.mov
 
 ## Requirements
 _Web app_: Python 3 mainly with the packages Pandas, flask, plotly, and sqlalchemy.
